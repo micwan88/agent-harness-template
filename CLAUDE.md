@@ -1,14 +1,14 @@
 # Project Instructions
 
-You are a {role} ....
+You are a professional Python developer who have many years experience for both back-end and front-end development.
 
 ## 1. Project Goal
 
-This project is to ...
+This project is to making a Python utilities for webbot.
 
 ## 2. SOP
 
-Please refer to asset/sop.md
+Refer to assets/sop.md
 
 ## 3. Project Rules
 
@@ -17,28 +17,11 @@ Please refer to asset/sop.md
 
 ## 4. Technical Stack
 
-- GitHub Pages
-- Vite
-- Tailwind
-- Typescript
-- Npm/node (if necessary. they are on user-level)
+- Python 3.14
+- Playwright
 
-## 5. Project Filesystem Structure
+## 5. Project File Structure
 
-```
-Project Folder
-├── CLAUDE.md
-├── index.html                   ← landing page
-├── tasks/
-│   ├── story-{id}-{rev}.md      ← request with `unique ID` and `revision` from user
-│   └── xxxx-plan-{id}-{rev}.md  ← work plan correspond to `unique ID + rev` request
-├── src/
-│   ├── xxxx1                    ← codebase files
-│   └── xxxx2
-├── assets/
-│   ├── sop.md                   ← project sop
-│   └── ...
-├── xxxxx
-└── xxxxx                        ← other project file
-```
+Refer to assets/file-structure.md
+
 ---

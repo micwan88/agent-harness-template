@@ -4,7 +4,9 @@ There are 4 stages for every work unless user request to override it. They are `
 
 ## Workflow Overview
 
+```
 Start -> `Planning` -> `Implementation` -> `Verification` -> `Review` -> End
+```
 
 Note:
 - `Implementation` or `Verification` can back to `Planning` once something go unexpectedly
@@ -12,8 +14,8 @@ Note:
 ## Files Between Stages
 
 ### File List
-- {any_filename}-{id}-{rev}.md: the request given by user/upstream
-- {agent-name}-plan-{id}-{rev}.md: the work plan with status/question/issue through out the workflow
+- {any_filename}-{id}-r{rev}.md: the request given by user/upstream
+- {agent-name}-plan-{id}-r{rev}.md: the work plan with status/question/issue through out the workflow
 - {agent-name}-note.md: lessons capture in every request
 
 Note:
@@ -28,7 +30,8 @@ Note:
 date: yyyy-mm-dd
 id: d+
 rev: d+
-status: Completed
+status: Draft | Blocked | Approved | Completed
+author: {agent-name}
 ---
 
 ## Tasks
@@ -42,7 +45,7 @@ Content ...
 ```
 
 status:
-- `Pending`: drafted and waiting for user/upstream review
+- `Draft`: draft and waiting for user/upstream review
 - `Blocked`: outstanding questions/issues exists in "Question/Issue" section
 - `Approved`: approved by user/upstream and ready to next stage
 - `Completed`: all tasks are completed with summary review
@@ -53,17 +56,17 @@ status:
 
 - Analyze the request and think
 - Explore and understand the existing stuffs if request change on existing things like codebase
-- Write a detail plan "{agent-name}-plan-{id}-{rev}.md" with checkable items
+- Write a detail plan "{agent-name}-plan-{id}-r{rev}.md" with checkable items
 - Transform tasks into verifiable goals
 - State all questions/uncertains/assumptions explicitly in "Question/Issue" section.
 - Mark status = `Pending` for the plan 
 - Notify user/upstream to review and waiting for plan approval.
 
 Input:
-- "{any_filename}-{id}-{rev}.md" or "prompt" given by user/upstream
+- "{any_filename}-{id}-r{rev}.md" or "prompt" given by user/upstream
 
 Output:
-- Detail work plan "{agent-name}-plan-{id}-{rev}.md" for user/upstream review
+- Detail work plan "{agent-name}-plan-{id}-r{rev}.md" for user/upstream review
 
 Note:
 - `{id}` and `{rev}` in plan must be matched with the request file from user/upstream no matter in metadata or filename, otherwise, `{id}` start from `{last max id + 1}` and `{rev}` start from `{last max rev with same id + 1}`
@@ -79,7 +82,7 @@ Note:
 
 Input:
 - Approved plan
-- Or "{any_filename}-{id}-{rev}.md" or "prompt" if user skipped the `Planning` stage
+- Or "{any_filename}-{id}-r{rev}.md" or "prompt" if user skipped the `Planning` stage
 
 Output:
 - Actual work output
