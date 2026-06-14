@@ -5,8 +5,8 @@ paths:
 
 # Java Environment Rules
 
-- Always use `Spring Boot` to manage dependencies
-- Exclude non-related `Spring Boot` dependencies if not applicable say for example, embedded tomcat
+- Use Maven/Gradle as Dependency management with spring boot BOM as version management
+- When `Spring Boot` is used, try to exclude non-related `Spring Boot` dependencies if not applicable say for example, embedded tomcat
 
 # Java Coding Rules
 

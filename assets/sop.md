@@ -14,7 +14,7 @@ Note:
 ## Files Between Stages
 
 ### File List
-- {any_filename}-{id}-r{rev}.md: the request given by user/upstream
+- story-{id}-r{rev}.md: the request given by user/upstream
 - {agent-name}-plan-{id}-r{rev}.md: the work plan with status/question/issue through out the workflow
 - {agent-name}-note.md: lessons capture in every request
 
@@ -30,8 +30,9 @@ Note:
 date: yyyy-mm-dd
 id: d+
 rev: d+
-status: Draft | Blocked | Approved | Completed
-author: {agent-name}
+status: Draft | Blocked | Approved | InProgress | Completed
+author: {agent-name} | user
+description: some description
 ---
 
 ## Tasks
@@ -48,6 +49,7 @@ status:
 - `Draft`: draft and waiting for user/upstream review
 - `Blocked`: outstanding questions/issues exists in "Question/Issue" section
 - `Approved`: approved by user/upstream and ready to next stage
+- `InProgress`: in progress
 - `Completed`: all tasks are completed with summary review
 
 ## Stage Details
@@ -59,11 +61,11 @@ status:
 - Write a detail plan "{agent-name}-plan-{id}-r{rev}.md" with checkable items
 - Transform tasks into verifiable goals
 - State all questions/uncertains/assumptions explicitly in "Question/Issue" section.
-- Mark status = `Pending` for the plan 
+- Mark status = `Draft` for the plan 
 - Notify user/upstream to review and waiting for plan approval.
 
 Input:
-- "{any_filename}-{id}-r{rev}.md" or "prompt" given by user/upstream
+- "story-{id}-r{rev}.md" or "prompt" given by user/upstream
 
 Output:
 - Detail work plan "{agent-name}-plan-{id}-r{rev}.md" for user/upstream review
@@ -77,12 +79,13 @@ Note:
 - Actual work according to the request / the plan
 - The given plan must be status = `Approved` and `None` is shown under "Question/Issue" section if not push back and state.
 - Mark items complete as you go in the plan
+- Mark status = `InProgress`
 - If something goes sideways with plan/request, STOP and state in plan with question/issue + mark `Blocked` to status then push back to user/upstream
 - Once all completed, can go next stage
 
 Input:
 - Approved plan
-- Or "{any_filename}-{id}-r{rev}.md" or "prompt" if user skipped the `Planning` stage
+- Or "story-{id}-r{rev}.md" or "prompt" if user skipped the `Planning` stage
 
 Output:
 - Actual work output
