@@ -11,7 +11,7 @@ Start -> `Planning` -> `Implementation` -> `Verification` -> `Review` -> End
 Note:
 - `Implementation` or `Verification` can back to `Planning` once something go unexpectedly
 
-## File Between Stages
+## Files Between Stages
 
 ### File List
 - {request-file-name}-{id}-r{rev}.md: the request given by user/upstream
