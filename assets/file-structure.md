@@ -12,7 +12,8 @@ Project Folder
 │   ├── story-{id}-r{rev}.md      ← request with `unique ID` and `revision` from user
 │   ├── xxxx-plan-{id}-r{rev}.md  ← work plan correspond to `unique ID + revision` request
 │   ├── xxxx-note.md              ← lessons capture by agent
-│   └── ...
+│   ├── ...
+│   └── archived/                 ← archive folder for tasks related files
 ├── assets/                       ← static project files
 │   ├── file-structure.md         ← project file structure
 │   ├── sop.md                    ← project sop
@@ -20,6 +21,9 @@ Project Folder
 ├── index.html                    ← landing page
 ├── src/
 │   ├── xxxx1                     ← codebase files
+│   └── xxxx2
+├── tests/
+│   ├── xxxx1                     ← test files
 │   └── xxxx2
 ├── xxxxx
 └── xxxxx                         ← other project file
