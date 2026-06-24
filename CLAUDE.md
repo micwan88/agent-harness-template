@@ -10,18 +10,18 @@ This project is to making a Python utilities for webbot.
 
 Refer to assets/sop.md
 
-## 3. Project Rules
+## 3. Project File Structure
 
-- ...
-- ...
+Refer to assets/file-structure.md
 
 ## 4. Technical Stack
 
 - Python 3.14
 - Playwright
 
-## 5. Project File Structure
+## 5. Project Rules
 
-Refer to assets/file-structure.md
+- ...
+- ...
 
 ---
