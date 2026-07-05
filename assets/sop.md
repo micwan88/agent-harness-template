@@ -1,6 +1,6 @@
 # Standard Operating Procedure
 
-There are 4 stages for every work unless user request to override it explicitly. They are `Planning`, `Implementation`, `Verification` and `Review`.
+There are 4 stages for work unless user request to override it explicitly. They are `Planning`, `Implementation`, `Verification` and `Review`.
 
 ## Workflow Overview
 
@@ -15,12 +15,13 @@ Note:
 
 ### File List
 - {request-file-name}-{id}-r{rev}.md: the request given by user/upstream
-- {agent-name}-plan-{id}-r{rev}.md: the work plan with status/question/issue through out the workflow
-- {agent-name}-note.md: lessons capture in every request
+- {agent-name}-plan-{id}-r{rev}.md: the work plan with status/question/issue/assumption through out the workflow
+- {agent-name}-kb-{id}-r{rev}.md: lesson captured from particular request if any
+- {agent-name}-report-{id}-r{rev}.html: summary report state all finished work in `html` for human to read it
 
 Note:
 - `{request-file-name}`: the file name give by user/upstream, can be "story", "request", "spec" or any other name
-- `{agent-name}`: main / subagent / session name
+- `{agent-name}`: main / subagent name
 - `{id}`: unique number represent particular request given by user/upstream, otherwise increment by 1 from last max {id}.
 - `{rev}`: revision number that represent n-th version of the file.
 
@@ -38,6 +39,9 @@ description: some description
 
 ## Question/Issue
 - None
+
+## Assumptions
+- xxx
 
 ## Sample sections 1
 - xxx
@@ -61,9 +65,11 @@ status:
 - Explore and understand the existing stuffs if request change on existing things like codebase
 - Write a detail plan "{agent-name}-plan-{id}-r{rev}.md" with checkable items
 - Transform tasks into verifiable goals
-- State all questions/uncertains/assumptions explicitly in "Question/Issue" section.
-- Mark status = `Draft` for the plan 
+- State all questions/uncertains explicitly in "Question/Issue" section (if any)
+- State all assumptions explicitly in "Assumptions" section.
+- Mark status = `Draft` for the plan (If have question/issue, mark as `Blocked`)
 - Notify user/upstream to review and waiting for plan approval.
+- Update status to `Approved` and go next stage only when user said "approved" explicitly
 
 Input:
 - "{request-file-name}-{id}-r{rev}.md" or "prompt" given by user/upstream
@@ -78,9 +84,9 @@ Note:
 ### 2. Implementation
 
 - Actual work according to the request / the plan
-- The given plan must be status = `Approved` and `None` is shown under "Question/Issue" section if not push back and state.
-- Mark items complete as you go in the plan
+- The given plan must be status = `Approved` and `None` is shown under "Question/Issue" section. If not, push back and state.
 - Mark status = `InProgress`
+- Mark items complete as you go in the plan
 - If something goes sideways with plan/request, STOP and state it in plan under "Question/Issue" section + mark `Blocked` to status then push back to user/upstream
 - Once all completed, can go next stage
 
@@ -95,7 +101,7 @@ Output:
 ### 3. Verification
 
 - Test/Verify/Check the work output against with plan or the request
-- Confirm the correctness of the work output, if not go back last stage to fix it
+- Confirm the correctness of the work output. If not, go back last stage to fix it
 - If something goes sideways with plan/request, STOP and state it in plan under "Question/Issue" section + mark `Blocked` to status then push back to user/upstream
 - If everything has been proof for correctness, go next stage
 
@@ -105,9 +111,9 @@ Input:
 
 ### 4. Review
 
-- Write summary review in plan if exist, if not just report it to user/upstream
 - Mark plan status = `Completed`
-- Capture lessons if any in "{agent-name}-note.md"
+- Capture lesson in `{agent-name}-kb-{id}-r{rev}.md` if you think something can be improved/avoided for similar work later. It must be something durable, project-specific, and non-obvious. If not, just skip it.
+- Write summary review in `{agent-name}-report-{id}-r{rev}.html`. State all outcomes, issues and what to be verfied or anything skipped
 - Notify user/upstream the completion
 
 Input:
@@ -115,7 +121,7 @@ Input:
 - The plan / request from user/upstream
 
 Output:
-- The summary review in plan if exist, if not just report it to user/upstream
+- The summary review in plan if exist. If not, just report it to user/upstream
 
 ## Core Principles for Work
 
