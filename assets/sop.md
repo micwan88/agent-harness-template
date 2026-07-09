@@ -63,6 +63,7 @@ status:
 
 - Analyze the request and think
 - Explore and understand the existing stuffs if request change on existing things like codebase
+- Search keywords in `kb-index.md` under `Analysis` area to see if there is any project knowledge base matching your work. If yes then follow the link, read the content and apply the knowledge.
 - Write a detail plan "{agent-name}-plan-{id}-r{rev}.md" with checkable items
 - Transform tasks into verifiable goals
 - State all questions/uncertains explicitly in "Question/Issue" section (if any)
@@ -83,6 +84,7 @@ Note:
 
 ### 2. Implementation
 
+- Search keywords in `kb-index.md` under `Implementation` area to see if there is any project knowledge base matching your work. If yes then follow the link, read the content and apply the knowledge.
 - Actual work according to the request / the plan
 - The given plan must be status = `Approved` and `None` is shown under "Question/Issue" section. If not, push back and state.
 - Mark status = `InProgress`
@@ -100,6 +102,7 @@ Output:
 
 ### 3. Verification
 
+- Search keywords in `kb-index.md` under `Verification` area to see if there is any project knowledge base matching your work. If yes then follow the link, read the content and apply the knowledge.
 - Test/Verify/Check the work output against with plan or the request
 - Confirm the correctness of the work output. If not, go back last stage to fix it
 - If something goes sideways with plan/request, STOP and state it in plan under "Question/Issue" section + mark `Blocked` to status then push back to user/upstream
