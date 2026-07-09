@@ -17,7 +17,7 @@ Note:
 - {request-file-name}-{id}-r{rev}.md: the request given by user/upstream
 - {agent-name}-plan-{id}-r{rev}.md: the work plan with status/question/issue/assumption through out the workflow
 - {agent-name}-kb-{id}-r{rev}.md: lesson captured from particular request if any
-- {agent-name}-report-{id}-r{rev}.html: summary report state all finished work in `html` for human to read it
+- {agent-name}-report-{id}-r{rev}.html: summary report state all finished work for human to read it (`html`)
 
 Note:
 - `{request-file-name}`: the file name give by user/upstream, can be "story", "request", "spec" or any other name
@@ -55,7 +55,7 @@ status:
 - `Blocked`: outstanding questions/issues exists in "Question/Issue" section
 - `Approved`: approved by user/upstream and ready to next stage
 - `InProgress`: in progress
-- `Completed`: all tasks are completed with summary review
+- `Completed`: all tasks are completed with summary report generated
 
 ## Stage Details
 
@@ -111,9 +111,9 @@ Input:
 
 ### 4. Review
 
+- Write a summary report in `{agent-name}-report-{id}-r{rev}.html`. Let user/upstream understand everything happened in the change. State with context, intuition, what was done, what was skipped, etc. and a quiz at the bottom on the changes that I must pass.
 - Mark plan status = `Completed`
-- Capture lesson in `{agent-name}-kb-{id}-r{rev}.md` if you think something can be improved/avoided for similar work later. It must be something durable, project-specific, and non-obvious. If not, just skip it.
-- Write summary review in `{agent-name}-report-{id}-r{rev}.html`. State all outcomes, issues and what to be verfied or anything skipped
+- Capture lesson in `{agent-name}-kb-{id}-r{rev}.md` base on the template `main-kb-1-r1-template.md` if you think something can be improved/avoided for similar work later. It must be something durable, project-specific, and non-obvious. If not, just skip it.
 - Notify user/upstream the completion
 
 Input:
@@ -121,7 +121,9 @@ Input:
 - The plan / request from user/upstream
 
 Output:
-- The summary review in plan if exist. If not, just report it to user/upstream
+- Capture lesson if any
+- The plan marked as completed if any
+- The summary report
 
 ## Core Principles for Work
 
