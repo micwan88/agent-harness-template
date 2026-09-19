@@ -16,6 +16,7 @@ Note:
 ### File List
 - {request-file-name}-{id}-r{rev}.md: the request given by user/upstream
 - {agent-name}-plan-{id}-r{rev}.md: the work plan with status/question/issue/assumption through out the workflow
+- log-{id}.md: the clarification/addtional details of the request which given by user/upstream
 - {agent-name}-kb-{id}-r{rev}.md: lesson captured from particular request if any
 - {agent-name}-report-{id}-r{rev}.html: summary report state all finished work for human to read it (`html`)
 
@@ -74,6 +75,7 @@ status:
 
 Input:
 - "{request-file-name}-{id}-r{rev}.md" or "prompt" given by user/upstream
+- log-{id}.md (optional)
 
 Output:
 - Detail work plan "{agent-name}-plan-{id}-r{rev}.md" for user/upstream review
