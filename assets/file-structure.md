@@ -10,7 +10,9 @@ Project Folder
 │   └── xxxx2
 ├── tasks/
 │   ├── story-1-r1-template.md        ← request template
+│   ├── log-1-template.md             ← log template
 │   ├── story-{id}-r{rev}.md          ← request with `unique ID` and `revision` from user
+│   ├── log-{id}.md                   ← clarifications for request with `unique ID` from user
 │   ├── xxxx-plan-{id}-r{rev}.md      ← work plan correspond to `unique ID + revision` request
 │   ├── xxxx-report-{id}-r{rev}.html  ← work report correspond to `unique ID + revision` request
 │   ├── ...
